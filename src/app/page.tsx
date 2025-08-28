@@ -2,11 +2,8 @@
 import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
 import BillboardHero from '@/components/sections/layouts/hero/BillboardHero';
 import BentoKPIStandard from '@/components/bento/BentoKPIStandard';
-import ButtonHoverDirectional from '@/components/buttons/ButtonHoverDirectional/ButtonHoverDirectional';
-import ButtonHoverBubble from '@/components/buttons/ButtonHoverBubble';
 import TextboxStandard from '@/components/textbox/TextboxStandard';
 import CentralFAQ from '@/components/sections/layouts/faq/CentralFAQ';
-import Testimonials from '@/components/sections/layouts/testimonials/Testimonials';
 
 export default function Home() {
   return (
@@ -40,10 +37,10 @@ export default function Home() {
         />
       </div>
       <div id="testimonials" className="my-20">
-        <Testimonials
-          testimonials={[
-            { quote: "Fantastic service!", name: "John Doe", role: "CEO, Company" },
-            { quote: "Highly recommend Webild!", name: "Jane Smith", role: "Manager, Business" }
+        <CentralFAQ
+          items={[
+            { title: "How can I contact you?", content: "You can reach us via email at support@webild.com" },
+            { title: "What services do you offer?", content: "We provide a range of SaaS solutions customized for your needs." },
           ]}
         />
       </div>
@@ -51,14 +48,6 @@ export default function Home() {
         <TextboxStandard
           title={<h2 className="text-3xl font-bold">About Us</h2>}
           description={<p className="text-lg">Webild is committed to innovation and excellence.</p>}
-        />
-      </div>
-      <div id="contact" className="my-20">
-        <CentralFAQ
-          items={[
-            { title: "How can I contact you?", content: "You can reach us via email at support@webild.com" },
-            { title: "What services do you offer?", content: "We provide a range of SaaS solutions customized for your needs." },
-          ]}
         />
       </div>
     </SiteThemeProvider>
